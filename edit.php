@@ -1,0 +1,8 @@
+<?php include "koneksi.php"; $id = $_GET['id'];  
+$query=mysqli_query($kon,"SELECT * FROM eksekutif WHERE id='$id'"); while ($row=mysqli_fetch_array($query)){ 
+ $id = $row['id']; $nim = $row['nim']; $nama_mhs = $row['nama_mhs']; $no_hp = $row['no_hp']; $alamat = $row['alamat']; $password = $row['password'];
+echo "<html>"; echo "<body>"; echo "<font face='tahoma' color='green' size=4><b>Perbaiki Data</b></font>"; echo "<table align='left'>"; echo "<form method=\"post\" action=\"update.php?id=$id\" enctype='multipart/form-data'>"; echo "<br>"; echo "<tr><td><font face='Tahoma' color='black' size=2>id </font></td><td>:</td><td><input type='text' name='id' value='$id' size='30'>&nbsp; </td></tr>";  
+echo "<tr><td><font face='Tahoma' color='black' size=2>nim</font></td><td>:</td><td><input type='text' name='nim' value='$nim' size='30'>&nbsp; </td></tr>"; echo "<tr><td><font face='Tahoma' color='black' size=2>nama_mhs</font></td><td>:</td><td><input type='text' name='nama_mhs' value='$nama_mhs' size='30'>&nbsp; </td></tr>";  echo "<tr><td><font face='Tahoma' color='black' size=2>no_hp</font></td><td>:</td><td><input type='text' name='no_hp' value='$no_hp' size='30'>&nbsp; </td></tr>";
+echo "<tr><td><font face='Tahoma' color='black' size=2>alamat</font></td><td>:</td><td><input type='text' name='alamat' value='$alamat' size='30'>&nbsp; </td></tr>"; 
+echo "<tr><td><font face='Tahoma' color='black' size=2>password</font></td><td>:</td><td><input type='text' name='password' value='$password' size='30'>&nbsp; </td></tr>";  
+echo "<tr><td></td><td></td><td><font size='2'><input type='submit' name='submit' value='Update'/></font></td></tr>"; echo "</table></form></body></html>"; } ?>
